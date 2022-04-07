@@ -1,0 +1,45 @@
+@use 'sass:math';
+
+.decoration__container {
+  height: 50vh;
+  width: 100%;
+  transition: 1s;
+}
+
+.decoration1 {
+  background-color:black;
+// daj warstwę wierzchnią linear gradient z czarnym żeby było ładnie
+}
+
+.decoration2 {
+  background-color: purple;
+}
+
+.decoration3 {
+  background-color:green;
+}
+
+.main__functions {
+  background-color: gray;
+  height: calc(50vh - 120px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.function__element {
+  min-height: 200px;
+  width:50%;
+  margin: 70px;
+}
+
+.browse__games {
+  background-color: floralwhite;
+  margin-right:0;
+}
+
+.draw__game {
+  background-color: #ccb07b;
+  margin-left: 0;
+  border-left: 3px solid red;
+}

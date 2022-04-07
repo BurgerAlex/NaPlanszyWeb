@@ -1,0 +1,42 @@
+$header-height: 70px;
+
+.header {
+  height: $header-height;
+  background-color: rgba(250, 145, 145, 0.57);
+  display: flex;
+  justify-content: center;
+
+}
+
+.header__container {
+  width: 90%;
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav {
+  background-color:orange;
+  width: 500px;
+  height: 100%;
+}
+
+.nav__search {
+  position: relative;
+}
+
+.search__btn {
+  background-color: yellow;
+  height: $header-height;
+  position: absolute;
+  right: 0;
+}
+
+.search__form {
+  position: absolute;
+  top: $header-height;
+  right: 0;
+  display: flex;
+  background-color: white;
+}
