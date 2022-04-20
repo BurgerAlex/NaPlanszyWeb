@@ -1,23 +1,25 @@
-$header-height: 70px;
+@import '../variables';
 
 .header {
   height: $header-height;
-  background-color: rgba(250, 145, 145, 0.57);
   display: flex;
   justify-content: center;
-
 }
 
 .header__container {
-  width: 90%;
-  background-color: red;
+  width: 85%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.header__name a {
+  font-family: $fancy-font;
+  font-size: 26px;
+  font-weight: 600;
+}
+
 .header__nav {
-  background-color:orange;
   width: 500px;
   height: 100%;
 }
@@ -27,10 +29,20 @@ $header-height: 70px;
 }
 
 .search__btn {
-  background-color: yellow;
   height: $header-height;
   position: absolute;
   right: 0;
+  font-size:36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $header-height;
+  border-radius: 50%;
+}
+
+.btn:hover {
+  background-color: $dark-elements;
+  transition: 0.3s;
 }
 
 .search__form {
@@ -38,5 +50,18 @@ $header-height: 70px;
   top: $header-height;
   right: 0;
   display: flex;
-  background-color: white;
+  background-color: $light-color;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.form__submit {
+  height: 40px;
+  width: 60px;
+  border-radius: 0 3px 3px 0;
+}
+
+.form__submit:active {
+  border-top: 2px solid black;
+  border-left: 2px solid black;
 }

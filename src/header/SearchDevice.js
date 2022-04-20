@@ -1,6 +1,7 @@
 import * as React from "react";
 import {useState} from "react";
 import TextField from "@mui/material/TextField";
+import {GiMagnifyingGlass} from 'react-icons/gi';
 
 export default function SearchForGames(){
     const [isSearching, setIsSearching] = useState(false)
@@ -23,22 +24,23 @@ export default function SearchForGames(){
     if (isSearching) {
         return (
             <div className="nav__search">
-                <button className="btn search__btn" onClick={handleClick}>Tu wstaw ikonę</button>
+                <button className="btn search__btn" onClick={handleClick}><GiMagnifyingGlass/></button>
                 <form className="search__form" onSubmit={handleSubmit}>
                     <TextField
-                        label="Title"
+                        placeholder="Title"
                         id="outlined-size-small"
                         size="small"
+                        color="warning"
                         onChange={handleChange}
                     />
-                    <input type="submit" value="Szukaj"/>
+                    <input className='btn form__submit' type="submit" value="Search"/>
                 </form>
             </div>
         )
     }
     return (
         <div className="nav__search">
-            <button className="btn search__btn" onClick={handleClick}>Tu wstaw ikonę</button>
+            <button className="btn search__btn" onClick={handleClick}><GiMagnifyingGlass/></button>
         </div>
     )
 }

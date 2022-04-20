@@ -1,4 +1,11 @@
 @use 'sass:math';
+@import '../variables';
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .decoration__container {
   height: 50vh;
@@ -20,11 +27,8 @@
 }
 
 .main__functions {
-  background-color: gray;
   height: calc(50vh - 120px);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  background-color: $medium-color;
 }
 
 .function__element {
@@ -34,12 +38,34 @@
 }
 
 .browse__games {
-  background-color: floralwhite;
   margin-right:0;
+  flex-direction: column;
 }
 
 .draw__game {
-  background-color: #ccb07b;
   margin-left: 0;
-  border-left: 3px solid red;
+  border-left: 2px solid $light-color;
+}
+
+.function__btn {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  font-size: 100px;
+}
+
+.function__title {
+  color: $details-color;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.popper__box {
+  color: red;
+  height: 700px;
+  width: 800px;
+  position: absolute;
+  bottom: 0;
+  right: 400px;
 }

@@ -1,36 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import SimplePopper from "./Popper";
+import Box from '@mui/material/Box';
+import Popper from '@mui/material/Popper';
+import {GiRollingDices} from 'react-icons/gi';
 
 const DrawGame = () => {
-    const API = 'https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&pretty=true&client_id=R6iyDtkxaO';
-    const [apiArray, setApiArray] = useState([])
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popper' : undefined;
 
-    useEffect(()=>{
-        fetch(`${API}`)
-            .then(resp => resp.json())
-            .then(resp => setApiArray(resp.games))
-            .catch(err => console.log(err))
-    }, [])
-
-    function getRandomNumber(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    // function getRandomAPI(){
-    //     return apiArray[getRandomNumber(0, apiArray.length)]
-    // }
-
-    const randomApi = apiArray[getRandomNumber(0, apiArray.length)]
-
-    console.log(randomApi)
-
-    // console.log(randomApi.id) // ---
+    const handleClick = (event) => {
+        setAnchorEl(anchorEl ? null : event.currentTarget);
+    };
 
     return (
         <div className='draw__game function__element'>
-            <button className='draw__btn'>Tu ikonka</button>
-            <h2 className='draw__title'>Wylosuj tytuł</h2>
+            <div className='flex'>
+                <button className='btn function__btn flex' aria-describedby={id} type="button" onClick={handleClick}>
+                    <GiRollingDices/>
+                </button>
+                <Popper id={id} open={open} anchorEl={anchorEl}>
+                    <Box className='popper__box' sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+                        <SimplePopper/>
+                        <button onClick={handleClick}>X</button>
+                    </Box>
+                </Popper>
+            </div>
+            <h2 className='function__title'>Roll'n go</h2>
         </div>
     );
 };

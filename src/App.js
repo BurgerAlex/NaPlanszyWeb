@@ -1,22 +1,23 @@
 import './App.css';
-import Header from './header/Header'
 import MainPage from "./mainPage/MainPage";
-import BrowseGames from "./mainPage/BrowseGames";
-import DrawGame from "./mainPage/DrawGame";
+// import React, {Component} from 'react';
+import {
+    BrowserRouter,
+    Route,
+    Routes,
+    Link,
+    Switch,
+    NavLink,
+} from 'react-router-dom';
+import Header from "./header/Header";
 
 function App() {
-  return (
-    <div className="App">
-       <Header/>
-       <div className='main__page'>
-           <MainPage/>
-           <section className='main__functions'>
-               <BrowseGames/>
-               <DrawGame/>
-           </section>
-       </div>
-    </div>
-  );
+    return <BrowserRouter>
+        <Routes>
+            <Route exact path='/' element={<MainPage/>} />
+            <Route eact path='/header' element={<Header/>} />
+        </Routes>
+    </BrowserRouter>;
 }
 
 export default App;
