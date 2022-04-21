@@ -1,0 +1,10 @@
+@import "../variables";
+
+.footer{
+  color: $light-color;
+  height: 50px;
+}
+
+.footer__container {
+  justify-content: flex-end;
+}

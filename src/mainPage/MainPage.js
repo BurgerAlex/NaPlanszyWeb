@@ -4,6 +4,7 @@ import BrowseGames from "./BrowseGames";
 import DrawGame from "./DrawGame";
 import DecorationElement from "./DecorationElement";
 import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 export default function MainPage() {
     return (
@@ -16,6 +17,7 @@ export default function MainPage() {
                     <DrawGame/>
                 </section>
             </div>
+            <Footer/>
         </>
     )
 };
