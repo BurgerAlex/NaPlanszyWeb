@@ -1,0 +1,19 @@
+.decoration__container {
+  height: 50vh;
+  width: 100%;
+  transition: 1s;
+  color: $light-color;
+}
+
+.decoration1 {
+  background-color:black;
+  // daj warstwę wierzchnią linear gradient z czarnym żeby było ładnie
+}
+
+.decoration2 {
+  background-color: purple;
+}
+
+.decoration3 {
+  background-color:green;
+}

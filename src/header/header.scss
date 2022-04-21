@@ -6,11 +6,9 @@
   justify-content: center;
 }
 
-.header__container {
+.container {
   width: 85%;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .header__name a {
@@ -34,9 +32,6 @@
   position: absolute;
   right: 0;
   font-size:36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: $header-height;
   border-radius: 50%;
 }
@@ -50,9 +45,7 @@
   position: absolute;
   top: $header-height;
   right: 0;
-  display: flex;
   background-color: $light-color;
-  align-items: center;
   border-radius: 4px;
 }
 

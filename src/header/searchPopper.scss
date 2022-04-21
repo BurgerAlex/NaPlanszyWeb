@@ -1,0 +1,13 @@
+@import '../variables';
+
+.search__box {
+  background-color:$light-color;
+  color: $dark-color2;
+  height: 600px;
+  width: 800px;
+  position: absolute;
+  top: 50px;
+  right: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px $dark-elements;
+}
