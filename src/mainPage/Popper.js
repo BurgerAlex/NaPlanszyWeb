@@ -19,23 +19,29 @@ export default function SimplePopper() {
     if (randomAPIElement === false) {
         return <WaitingPopper/>
     } else {
+        console.log(randomAPIElement)
+
         return (
-            <div className='popper'>
+            <div>
                 <h2>{randomAPIElement.name}</h2>
                 <section className='popper__details flex'>
                     <div>
-                        <img className='popper__img' src={randomAPIElement.images.small}/>
+                        <img className='popper__img' src={randomAPIElement.images.medium}/>
                     </div>
                     <div className='popper__info'>
                         <p>Publisher: {randomAPIElement.primary_publisher.name}</p>
                         <p>Players: {randomAPIElement.min_players}-{randomAPIElement.max_players}</p>
                         <p>Min age: {randomAPIElement.min_age}</p>
                         <p>Playtime: {randomAPIElement.playtime}</p>
+                        {randomAPIElement.official_url === null ?
+                            <p>Official website unavailable</p> :
+                            <p>Official website <a href={randomAPIElement.official_url}>here</a></p>
+                        }
                     </div>
                 </section>
                 <>
                     {gameDescription.length === 0 ?
-                        (<p>Preview currently unavailable</p>) :
+                        <p>Preview currently unavailable</p> :
                         <p className='popper__text'>{gameDescription}</p>
                     }
                 </>
@@ -43,29 +49,3 @@ export default function SimplePopper() {
         )
     }
 }
-
-// const API = 'https://api.boardgameatlas.com/api/search?order_by=rank&ascending=false&pretty=true&client_id=R6iyDtkxaO';
-// const [apiArray, setApiArray] = useState([])
-//
-// useEffect(()=>{
-//     fetch(`${API}`)
-//         .then(resp => resp.json())
-//         .then(resp => setApiArray(resp.games))
-//         .catch(err => console.log(err))
-// }, [])
-//
-// function getRandomNumber(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min)) + min;
-// }
-//
-// // function getRandomAPI(){
-// //     return apiArray[getRandomNumber(0, apiArray.length)]
-// // }
-//
-// const randomApi = apiArray[getRandomNumber(0, apiArray.length)]
-//
-// console.log(randomApi)
-//
-// // console.log(randomApi.id) // ---

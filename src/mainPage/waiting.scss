@@ -4,7 +4,6 @@
   margin-top: 50px;
   height: 60%;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .waiting__animation {
@@ -14,6 +13,7 @@
   width: 200px;
   height: 200px;
   animation: spin 1s linear infinite;
+  margin-bottom: 50px;
 }
 
 @keyframes spin {

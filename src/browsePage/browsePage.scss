@@ -1,0 +1,47 @@
+@import '../variables';
+
+.web__title {
+  background-color: $light-color;
+  padding: 30px;
+}
+
+.browse__all {
+  background-color: $light-color;
+  flex-wrap: wrap;
+}
+
+.game__element {
+  margin: 0 auto;
+  padding: 30px;
+  width: 45vw;
+  border-bottom: 2px solid black;
+  flex-direction: column;
+}
+
+.game__element img {
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+}
+
+.game__details {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.game__info {
+  width: 300px;
+  text-align: left;
+  color: $dark-color2;
+}
+
+.game__info h2 {
+  margin-bottom: 20px;
+}
+
+.game__description {
+  height: 200px;
+  margin-top: 30px;
+  overflow: auto;
+  padding: 10px;
+}

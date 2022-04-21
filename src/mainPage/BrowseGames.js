@@ -6,7 +6,7 @@ const BrowseGames = () => {
 
     return (
         <div className='browse__games function__element flex'>
-            <a href="/" className='btn function__btn flex'><GiPokerHand/></a>
+            <a href="/browse" className='btn function__btn flex'><GiPokerHand/></a>
             <h2 className='function__title'>Show'em all</h2>
         </div>
     );
