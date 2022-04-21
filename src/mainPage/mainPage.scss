@@ -1,5 +1,6 @@
 @use 'sass:math';
 @import '../variables';
+@import 'popper';
 
 .flex {
   display: flex;
@@ -11,6 +12,7 @@
   height: 50vh;
   width: 100%;
   transition: 1s;
+  color: $light-color;
 }
 
 .decoration1 {
@@ -59,13 +61,4 @@
   color: $details-color;
   font-weight: 700;
   font-size: 30px;
-}
-
-.popper__box {
-  color: red;
-  height: 700px;
-  width: 800px;
-  position: absolute;
-  bottom: 0;
-  right: 400px;
 }

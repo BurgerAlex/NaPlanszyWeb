@@ -1,0 +1,23 @@
+@import '../variables';
+
+.waiting__element {
+  margin-top: 50px;
+  height: 60%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.waiting__animation {
+  border: 10px solid $medium-color;
+  border-top-color: $dark-color2;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

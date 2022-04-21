@@ -19,10 +19,12 @@ const DrawGame = () => {
                 <button className='btn function__btn flex' aria-describedby={id} type="button" onClick={handleClick}>
                     <GiRollingDices/>
                 </button>
-                <Popper id={id} open={open} anchorEl={anchorEl}>
-                    <Box className='popper__box' sx={{ border: 1, p: 1, bgcolor: 'background.paper' }}>
+                <Popper className='popper' id={id} open={open} anchorEl={anchorEl}>
+                    <Box className='popper__box' sx={{ border: 1, p: 1 }}>
+                        <div className='flex close__btn__element'>
+                            <button className='btn close__btn flex' onClick={handleClick}>X</button>
+                        </div>
                         <SimplePopper/>
-                        <button onClick={handleClick}>X</button>
                     </Box>
                 </Popper>
             </div>

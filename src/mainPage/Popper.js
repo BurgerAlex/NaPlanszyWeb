@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {useEffect, useState} from "react";
+import WaitingPopper from "./WaitingPopper";
 
 export default function SimplePopper() {
     const randomAPI = `https://api.boardgameatlas.com/api/search?ascending=false&pretty=true&client_id=R6iyDtkxaO&random=true`;
     const [randomAPIElement, setRandomAPIElement] = useState(false)
+    const gameDescription = randomAPIElement.description_preview;
 
     useEffect(()=>{
         fetch(`${randomAPI}`)
@@ -15,14 +17,29 @@ export default function SimplePopper() {
     }, [])
 
     if (randomAPIElement === false) {
-        return <>Wait for it...</>
+        return <WaitingPopper/>
     } else {
-        console.log(randomAPIElement)
-        console.log(randomAPIElement.id)
         return (
-            <>{randomAPIElement.id}
-                {/*<img src={randomAPIElement.thumb_url}></img>*/}
-            </>
+            <div className='popper'>
+                <h2>{randomAPIElement.name}</h2>
+                <section className='popper__details flex'>
+                    <div>
+                        <img className='popper__img' src={randomAPIElement.images.small}/>
+                    </div>
+                    <div className='popper__info'>
+                        <p>Publisher: {randomAPIElement.primary_publisher.name}</p>
+                        <p>Players: {randomAPIElement.min_players}-{randomAPIElement.max_players}</p>
+                        <p>Min age: {randomAPIElement.min_age}</p>
+                        <p>Playtime: {randomAPIElement.playtime}</p>
+                    </div>
+                </section>
+                <>
+                    {gameDescription.length === 0 ?
+                        (<p>Preview currently unavailable</p>) :
+                        <p className='popper__text'>{gameDescription}</p>
+                    }
+                </>
+            </div>
         )
     }
 }
